@@ -20,7 +20,7 @@ const StatusColumn = ({
   return (
     <div className="flex flex-col items-center h-[360px] shadow-all-around rounded-xl">
       <h2 className="text-2xl text-zinc-800 py-4 px-6">{status}</h2>
-      <div className="flex flex-col gap-4 py-4 px-6 w-full max-h-[80%] overflow-x-hidden overflow-y-scroll">
+      <div className="flex flex-col items-center gap-4 py-4 px-6 w-full max-h-[80%] overflow-x-hidden overflow-y-scroll">
         {filteredTasks.map((task) => (
           <Task
             key={task.title}
