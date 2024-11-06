@@ -1,8 +1,8 @@
 import { TaskType } from "../../types/Task";
 
 type Props = {
-  handleMoveBack: () => void;
-  handleMoveForward: () => void;
+  handleMoveBack: (id: string) => void;
+  handleMoveForward: (id: string) => void;
   task: TaskType;
 };
 
@@ -22,7 +22,7 @@ const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
           isMoveBackDisabled ? "text-gray-300" : "text-rose-700"
         }`}
         disabled={isMoveBackDisabled}
-        onChange={handleMoveBack}
+        onClick={() => handleMoveBack(task.id)}
       >
         ←
       </button>
@@ -33,7 +33,7 @@ const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
           isMoveForwardDisabled ? "text-gray-300" : "text-lime-700"
         }`}
         disabled={isMoveForwardDisabled}
-        onChange={handleMoveForward}
+        onClick={() => handleMoveForward(task.id)}
       >
         →
       </button>
