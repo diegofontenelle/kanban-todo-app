@@ -23,7 +23,7 @@ const StatusColumn = ({
       <div className="flex flex-col items-center gap-4 py-4 px-6 w-full max-h-[80%] overflow-x-hidden overflow-y-scroll">
         {filteredTasks.map((task) => (
           <Task
-            key={task.title}
+            key={task.id}
             task={task}
             handleMoveBack={handleMoveBack}
             handleMoveForward={handleMoveForward}
