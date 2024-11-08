@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { TaskType } from "../../types/Task";
+import { Status } from "../../types/Status";
 
 type Props = {
   addTaskCallback: (task: TaskType) => void;
@@ -13,7 +14,7 @@ const AddTask = ({ addTaskCallback }: Props) => {
     addTaskCallback({
       id: uuidv4(),
       title: task,
-      status: "To Do",
+      status: Status.TODO,
     });
     setTask("");
   }

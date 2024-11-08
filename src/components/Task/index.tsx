@@ -1,3 +1,4 @@
+import { Status } from "../../types/Status";
 import { TaskType } from "../../types/Task";
 
 type Props = {
@@ -7,8 +8,8 @@ type Props = {
 };
 
 const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
-  const isMoveBackDisabled = task.status === "To Do";
-  const isMoveForwardDisabled = task.status === "Done";
+  const isMoveBackDisabled = task.status === Status.TODO;
+  const isMoveForwardDisabled = task.status === Status.DONE;
 
   return (
     <div

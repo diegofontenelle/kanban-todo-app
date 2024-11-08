@@ -2,6 +2,7 @@ import { useState } from "react";
 import StatusColumn from "../StatusColumn";
 import { TaskType } from "../../types/Task";
 import AddTask from "../AddTask";
+import { Status } from "../../types/Status";
 
 const Board = () => {
   const [tasks, setTasks] = useState<TaskType[]>([]);
@@ -41,19 +42,19 @@ const Board = () => {
           tasks={tasks}
           handleMoveBack={handleMoveBack}
           handleMoveForward={handleMoveForward}
-          status="To Do"
+          status={Status.TODO}
         />
         <StatusColumn
           tasks={tasks}
           handleMoveBack={handleMoveBack}
           handleMoveForward={handleMoveForward}
-          status="In Progress"
+          status={Status.IN_PROGRESS}
         />
         <StatusColumn
           tasks={tasks}
           handleMoveBack={handleMoveBack}
           handleMoveForward={handleMoveForward}
-          status="Done"
+          status={Status.DONE}
         />
       </div>
       <AddTask

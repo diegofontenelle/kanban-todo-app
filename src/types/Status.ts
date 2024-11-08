@@ -1,1 +1,5 @@
-export type Status = "To Do" | "In Progress" | "Done";
+export const enum Status {
+  TODO = "To Do",
+  IN_PROGRESS = "In Progress",
+  DONE = "Done",
+}
