@@ -1,22 +1,23 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { TaskType } from "../../types/Task";
 import { Status } from "../../types/Status";
+import useTasksActions from "../../hooks/useTasksActions";
 
-type Props = {
-  addTaskCallback: (task: TaskType) => void;
-};
-
-const AddTask = ({ addTaskCallback }: Props) => {
-  const [task, setTask] = useState<string>("");
+const AddTask = () => {
+  const { addTask } = useTasksActions();
+  const [title, setTitle] = useState<string>("");
 
   function handleAddTask() {
-    addTaskCallback({
+    if (title.trim() === "") {
+      return;
+    }
+
+    addTask({
       id: uuidv4(),
-      title: task,
+      title,
       status: Status.TODO,
     });
-    setTask("");
+    setTitle("");
   }
 
   return (
@@ -25,8 +26,8 @@ const AddTask = ({ addTaskCallback }: Props) => {
         className="border py-2 px-3 rounded-xl"
         type="text"
         placeholder="Add Task"
-        value={task}
-        onChange={(event) => setTask(event.target.value)}
+        value={title}
+        onChange={(event) => setTitle(event.target.value)}
         onKeyPress={(event) => {
           if (event.key === "Enter") {
             handleAddTask();

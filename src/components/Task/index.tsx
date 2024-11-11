@@ -1,13 +1,13 @@
 import { Status } from "../../types/Status";
-import { TaskType } from "../../types/Task";
+import { Task as TTask } from "../../types/Task";
+import useTasksActions from "../../hooks/useTasksActions";
 
 type Props = {
-  handleMoveBack: (id: string) => void;
-  handleMoveForward: (id: string) => void;
-  task: TaskType;
+  task: TTask;
 };
 
-const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
+const Task = ({ task }: Props) => {
+  const { moveBackward, moveForward } = useTasksActions();
   const isMoveBackDisabled = task.status === Status.TODO;
   const isMoveForwardDisabled = task.status === Status.DONE;
 
@@ -23,7 +23,7 @@ const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
           isMoveBackDisabled ? "text-gray-300" : "text-rose-700"
         }`}
         disabled={isMoveBackDisabled}
-        onClick={() => handleMoveBack(task.id)}
+        onClick={() => moveBackward(task)}
       >
         ←
       </button>
@@ -34,7 +34,7 @@ const Task = ({ task, handleMoveBack, handleMoveForward }: Props) => {
           isMoveForwardDisabled ? "text-gray-300" : "text-lime-700"
         }`}
         disabled={isMoveForwardDisabled}
-        onClick={() => handleMoveForward(task.id)}
+        onClick={() => moveForward(task)}
       >
         →
       </button>
