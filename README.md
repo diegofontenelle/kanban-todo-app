@@ -66,7 +66,7 @@ Open your browser and navigate to `http://localhost:3000`.
 
 **Note: only the most important files are listed**
 
-src/
+```src/
 ├── components/
 │   ├── AddTask
 │   ├── Board
@@ -87,6 +87,7 @@ src/
 │   ├── getReadableStatus.ts
 ├── App.tsx
 └── index.tsx
+```
 
 ## Technologies Used
 
