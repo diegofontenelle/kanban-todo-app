@@ -1,100 +1,101 @@
-## Video Intro
-https://www.loom.com/share/3df7fcb5424644638b00724cb178e2ff
+# Kanban To-Do App
 
-* [Getting Started with the Every.io engineering challenge.](#getting-started-with-the-everyio-engineering-challenge)
-  * [The biggest factor will be your code:](#the-biggest-factor-will-be-your-code)
-  * [Requirements](#requirements)
-  * [Quick Start](#quick-start)
-* [Original CRA README below](#original-cra-readme-below)
-  * [Getting Started with Create React App](#getting-started-with-create-react-app)
-  * [Available Scripts](#available-scripts)
-    * [`yarn start`](#yarn-start)
-    * [`yarn test`](#yarn-test)
-    * [`yarn build`](#yarn-build)
-    * [`yarn eject`](#yarn-eject)
-  * [Learn More](#learn-more)
+A simple Kanban-style To-Do application built with React and TypeScript, inspired by Trello. Manage your tasks across different statuses: **To Do**, **In Progress**, and **Done**.
 
+## Table of Contents
 
-# Getting Started with the Every.io engineering challenge.
-Thanks for taking the time to complete the Every.io code challenge. Don't worry, it's not too hard, and please do not spend more than an hour or two. We know you have lots of these to do, and it can be very time consuming. If you feel like adding fancy animations, or getting all hip and fresh with the design, go ahead, but it won't earn you any extra points.
-## The biggest factor will be your code:
-1. How readable, is your code.
-2. How did you organize your components.
-3. Are there any bugs.
+- [Features](#features)
+- [Demo](#demo)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Folder Structure](#folder-structure)
+- [Technologies Used](#technologies-used)
+- [License](#license)
 
-## Requirements
+## Features
 
-[See the prototype for an example.](https://www.figma.com/proto/kd49ArXbBt0vi1kBSLkmC1/Code-Challenge?node-id=1%3A2&scaling=min-zoom&page-id=0%3A1)
+- **Add Tasks**: Quickly add new tasks to your To Do column.
+- **Move Tasks**: Seamlessly move tasks between statuses.
 
-You will be creating a basic todo list, with the following functionality.
-1. The list has 3 states. Each represented by a column. Similar to Trello.
-   1. `Todo`
-   2. `In Progress`
-   3. `Done`
-2. Each list item has a right and left arrow button.
-   1. The right arrow moves the list item from:
-      1. `Todo` to `In Progress`
-      2. `In Progress` to `Done`
-   2. The Left arrow moves the list item from
-      1. `Done` to `In Progress`
-      2. `In Progress` to `Todo`
-3. If the list in the in the `Todo` column, the left button should be disabled
-4. If the list is in the `Done` column, the right button should be disabled.
-5. There should be form with a text input below the buttons. When the user submits the form, the text from the text input should be added to a new todo item in the `Todo` column.
+## Demo
 
-## Quick Start
-1. npm install
-2. npm run start
-3. open your browser to http://localhost:3000
-4. Delete the `h2` from the component in `src/ChallengeComponent.tsx`
-5. Add your code to that component.
+<!-- Insert screenshots or a link to a live demo if available -->
 
+## Installation
 
------------------------
-# Original CRA README below
-## Getting Started with Create React App
+1. **Clone the Repository**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+   ```bash
+   git clone https://github.com/yourusername/kanban-todo-app.git
+   cd kanban-todo-app
+  ```
+2. **Install Dependencies**
 
-## Available Scripts
+  ```bash
+  npm install
+  ```
 
-In the project directory, you can run:
+  Or using Yarn:
+  ```bash
+  yarn install
+  ```
+3. **Start the Dev Server**
 
-### `yarn start`
+  ```bash
+  npm start
+  ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  Or using Yarn:
+  ```bash
+  yarn start
+  ```
+4. **Open the App**
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Open your browser and navigate to `http://localhost:3000`.
 
-### `yarn test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Usage
 
-### `yarn build`
+- **Add a Task**: Type a task name in the input field and press **Enter** or click the **+** button.
+- **Move a Task Forward**: Click the **Forward** button on a task to move it to the next status.
+- **Move a Task Backward**: Click the **Back** button on a task to move it to the previous status.
+- **Task Statuses**: Tasks are organized in columns based on their status.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Folder Structure
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Note: only the most important files are listed**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/
+├── components/
+│   ├── AddTask
+│   ├── Board
+│   ├── StatusColumn
+│   └── Task
+├── context/
+│   └── TasksContext.ts
+│   └── TasksProvider.tsx
+├── hooks/
+│   └── useTasks.ts
+│   └── useTasksActions.ts
+├── reducers/
+│   └── tasksReducer.ts
+├── types/
+│   ├── Status.ts
+│   └── Task.ts
+├── utils/
+│   ├── getReadableStatus.ts
+├── App.tsx
+└── index.tsx
 
-### `yarn eject`
+## Technologies Used
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- **React**
+- **Typescript**
+- **Tailwind**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Setup with Create React App.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## License
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is licensed under the MIT License.
