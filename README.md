@@ -20,6 +20,9 @@ A simple Kanban-style To-Do application built with React and TypeScript, inspire
 ## Demo
 
 <!-- Insert screenshots or a link to a live demo if available -->
+https://github.com/user-attachments/assets/6f6a9afb-b965-4ffd-b7ad-f9a38aa0241e
+
+
 
 ## Installation
 
